@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ride Requests</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Ride Requests</h1>
+  <ul>
+    {{#each rideRequests}}
+    <li>
+      <h3>Rider: {{this.ridername}}</h3>
+      <p>Current Location: {{this.currentLocation}}</p>
+      <p>Destination: {{this.destination}}</p>
+    </li>
+    {{/each}}
+  </ul>
+</body>
+
+</html>
