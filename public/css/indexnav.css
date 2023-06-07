@@ -1,7 +1,10 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-transition: all 250 ms ease-in-out;
+    -o-transition: all 250 ms ease-in-out;
     transition: all 250 ms ease-in-out;
 }
 
@@ -14,6 +17,8 @@ body {
 }
 
 .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: var(--gap, 1rem);
 }
@@ -23,8 +28,12 @@ body {
     width: 100%;
     background-position: center;
     background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
     padding-top: 2rem;
     padding-right: 2rem;
 }
@@ -47,14 +56,16 @@ nav ul li a span {
 .primary-navigation {
     padding: 1rem 3rem;
     background: hsl(0, 0%, 100%, 0.1);
-    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+            backdrop-filter: blur(1rem);
     list-style: none;
 }
 
 
 .primary-navigation a>[aria-hidden="true"] {
     font-weight: 700;
-    margin-inline-end: .5em;
+    -webkit-margin-end: .5em;
+            margin-inline-end: .5em;
 
 }
 
@@ -69,19 +80,36 @@ nav ul li a span {
         color: white;
         text-decoration: none;
 
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+
+        -webkit-box-direction: normal;
+
+            -ms-flex-direction: column;
+
+                flex-direction: column;
         padding: min(30vh, 10rem) 2em;
 
         background: hsl(0, 0%, 100%, 0.1);
-        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+                backdrop-filter: blur(1rem);
 
-        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+
+            -ms-transform: translateX(100%);
+
+                transform: translateX(100%);
+        -webkit-transition: -webkit-transform 350ms ease-in-out;
+        transition: -webkit-transform 350ms ease-in-out;
+        -o-transition: transform 350ms ease-in-out;
         transition: transform 350ms ease-in-out;
+        transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
 
     }
 
     .primary-navigation[data-visible="true"] {
-        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
+                transform: translateX(0%);
     }
 
     .mobile-nav-toggle {
