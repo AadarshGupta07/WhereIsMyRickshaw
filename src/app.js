@@ -76,8 +76,8 @@ app.get('/rider-login', (req, res) => {
     res.render("rider-login")
 })
 
-app.get('/ridebook', (req, res) => {
-    res.render("ridebook")
+app.get('/rider-booking-dashboard', (req, res) => {
+    res.render("rider-booking-dashboard")
 })
 
 app.get('/riderequestlist', (req, res) => {
@@ -89,7 +89,7 @@ app.get('/bookingstatus', (req, res) => {
 })
 
 
-// Update booking status
+// Handle post requests !
 app.post('/bookingstatus', async (req, res) => {
     try {
         const { ridername, currentLocation, destination } = req.body;
@@ -114,6 +114,19 @@ app.post('/bookingstatus', async (req, res) => {
     }
 });
 
+// all ride requests for driver 
+app.post('/all-ride-requests', async (req, res) => {
+    try {
+      // Fetch all ride requests from the database
+      const allRideRequests = await RideRequest.find();
+  
+      // Return the ride requests as a JSON response
+      res.status(200).render('bookingstatus', { rideRequests: allRideRequests });
+    } catch (error) {
+      res.status(500).send('Error retrieving ride requests.' + error);
+    }
+  });
+  
 
 //create a driver user in db
 app.post('/driverRegistration', async (req, res) => {
@@ -136,7 +149,7 @@ app.post('/driverRegistration', async (req, res) => {
 })
 
 //create a rider user in db
-app.post('/ridebook', async (req, res) => {
+app.post('/rider-booking-dashboard', async (req, res) => {
     try {
 
         const riderRegisterUser = new Rider({
@@ -147,7 +160,7 @@ app.post('/ridebook', async (req, res) => {
         })
 
         const registered = riderRegisterUser.save()
-        res.status(201).render('ridebook')
+        res.status(201).render('rider-booking-dashboard')
     } catch (error) {
         res.status(400).send(error)
     }
@@ -167,7 +180,7 @@ app.post('/driver-login', async (req, res) => {
         const isdriverMatch = await bcrypt.compare(password, userMail.password)
 
         if (isdriverMatch) {
-            res.status(201).render('bookingstatus')
+            res.status(201).render('welcomedriver')
         } else {
             res.send('invalid username or password')
         }
@@ -187,7 +200,7 @@ app.post('/rider-login', async (req, res) => {
         const isriderMatch = await bcrypt.compare(password, userMail.password)
 
         if (isriderMatch) {
-            res.status(201).render('ridebook')
+            res.status(201).render('rider-booking-dashboard')
         } else {
             res.send('invalid username or password')
         }
