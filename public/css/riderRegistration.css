@@ -37,6 +37,7 @@ form {
   padding: 3rem;
   border: 1px solid #ccc;
   border-radius: 10px;
+  position: relative;
 }
 
 /* Style the form inputs */
@@ -66,8 +67,6 @@ input[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  transform: translateX(455%);
-
 }
 
 input[type="submit"]:hover {
@@ -80,9 +79,5 @@ input[type="submit"]:hover {
     max-width: 100%;
     margin: 2rem;
     padding: 2rem;
-  }
-  input[type="submit"]{
-    transform: translateX(310%);
-
   }
 }

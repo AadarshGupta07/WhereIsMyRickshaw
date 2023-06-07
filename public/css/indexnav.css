@@ -60,7 +60,7 @@ nav ul li a span {
 
 @media (max-width: 800px) {
     .primary-navigation {
-        --gap: 2em;
+        --gap: 8em;
         position: fixed;
         z-index: 1000;
         inset: 0 0 0 30%;
