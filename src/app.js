@@ -92,12 +92,13 @@ app.get('/bookingstatus', (req, res) => {
 // Handle post requests !
 app.post('/bookingstatus', async (req, res) => {
     try {
-        const { ridername, currentLocation, destination } = req.body;
+        const { ridername, currentLocation, destination, passengerCount } = req.body;
 
         const rideRequest = new RideRequest({
             ridername,
             currentLocation,
             destination,
+            passengerCount,
             //   timestamp,
             //   status
         });

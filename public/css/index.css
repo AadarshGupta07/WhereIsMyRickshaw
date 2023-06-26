@@ -156,6 +156,7 @@ a {
 
 .green {
     color: #32c267;
+    user-select: none;
 }
 
 div.heading>div {
@@ -181,6 +182,7 @@ div.heading>div:nth-child(3)>p {
 .slide-up {
     -webkit-animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
     animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+    user-select: none;
 }
 
 @-webkit-keyframes slide-up {

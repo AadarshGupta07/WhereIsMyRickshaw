@@ -16,19 +16,20 @@
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
     }
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
 
-    50% {
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
         background-position: 100% 50%;
-    }
+      }
 
-    100% {
+      100% {
         background-position: 0% 50%;
+      }
     }
-}
 
     ul {
       list-style: none;
@@ -41,6 +42,20 @@
       border-radius: 4px;
       padding: 10px;
       margin-bottom: 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+    background-color: #347736;
     }
 
     @media (max-width: 768px) {
@@ -59,6 +74,8 @@
       <h3>Rider: {{this.ridername}}</h3>
       <p>Current Location: {{this.currentLocation}}</p>
       <p>Destination: {{this.destination}}</p>
+      <p>No. of Passengers: {{this.passengerCount}}</p>
+      {{!-- <button>Accept</button> --}}
     </li>
     {{/each}}
   </ul>

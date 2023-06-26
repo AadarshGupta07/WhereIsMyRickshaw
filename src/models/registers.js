@@ -59,6 +59,10 @@ const RideRequestSchema = new mongoose.Schema({
       type: String,
       required: true
     },
+    passengerCount: {
+      type: String,
+      required: true
+    },
     // timestamp: {
     //   type: Date,
     //   default: Date.now
