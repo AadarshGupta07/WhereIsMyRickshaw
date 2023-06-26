@@ -43,6 +43,10 @@ app.get('/queries', (req, res) => {
     res.render("queries")
 })
 
+app.get('/queries', (req, res) => {
+    res.render("queries")
+})
+
 app.get('/contact', (req, res) => {
     res.render("contact")
 })
