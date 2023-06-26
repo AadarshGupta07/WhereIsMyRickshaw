@@ -28,6 +28,7 @@ h1 {
     height: 20%;
     margin-block: auto;
     margin-inline: auto;
+    font-size: 1.5rem;
 }
 
 
@@ -110,5 +111,8 @@ h1 {
     .step {
       width: 33%;
       margin-bottom: 0;
+    }
+    h1 {
+        font-size: 2rem;
     }
   }
